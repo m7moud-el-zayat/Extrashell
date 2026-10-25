@@ -1,0 +1,180 @@
+<node>
+ <interface name="org.freedesktop.login1.Manager">
+  <method name="GetUserByPID">
+   <arg type="u" name="pid" direction="in"/>
+   <arg type="o" name="object_path" direction="out"/>
+  </method>
+  <method name="ListSessions">
+   <arg type="a(susso)" name="sessions" direction="out"/>
+    <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::login1::manager::Sessions"/>
+  </method>
+  <method name="ListUsers">
+   <arg type="a(uso)" name="users" direction="out"/>
+    <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::login1::manager::Users"/>
+  </method>
+  <method name="ListSeats">
+   <arg type="a(so)" name="seats" direction="out"/>
+    <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::login1::manager::Seats"/>
+  </method>
+  <method name="ListInhibitors">
+   <arg type="a(ssssuu)" name="inhibitors" direction="out"/>
+    <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::login1::manager::Inhibitors"/>
+  </method>
+  <method name="LockSessions">
+  </method>
+  <method name="UnlockSessions">
+  </method>
+  <method name="SetUserLinger">
+   <arg type="u" name="uid" direction="in"/>
+   <arg type="b" name="enable" direction="in"/>
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="AttachDevice">
+   <arg type="s" name="seat_id" direction="in"/>
+   <arg type="s" name="sysfs_path" direction="in"/>
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="FlushDevices">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="PowerOff">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="PowerOffWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="Reboot">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="RebootWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="Halt">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="HaltWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="Suspend">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="SuspendWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="Hibernate">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="HibernateWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="HybridSleep">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="HybridSleepWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="SuspendThenHibernate">
+   <arg type="b" name="interactive" direction="in"/>
+  </method>
+  <method name="SuspendThenHibernateWithFlags">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="Sleep">
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+  <method name="CanPowerOff">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanReboot">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanHalt">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanSuspend">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanHibernate">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanHybridSleep">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanSuspendThenHibernate">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="CanSleep">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="ScheduleShutdown">
+   <arg type="s" name="type" direction="in"/>
+   <arg type="t" name="usec" direction="in"/>
+  </method>
+  <method name="CancelScheduledShutdown">
+   <arg type="b" name="cancelled" direction="out"/>
+  </method>
+  <method name="CanRebootParameter">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="SetRebootParameter">
+   <arg type="s" name="parameter" direction="in"/>
+  </method>
+  <method name="CanRebootToFirmwareSetup">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="SetRebootToFirmwareSetup">
+   <arg type="b" name="enable" direction="in"/>
+  </method>
+  <method name="CanRebootToBootLoaderMenu">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="SetRebootToBootLoaderMenu">
+   <arg type="t" name="timeout" direction="in"/>
+  </method>
+  <method name="CanRebootToBootLoaderEntry">
+   <arg type="s" name="result" direction="out"/>
+  </method>
+  <method name="SetRebootToBootLoaderEntry">
+   <arg type="s" name="boot_loader_entry" direction="in"/>
+  </method>
+  <signal name="SecureAttentionKey">
+   <arg type="s" name="seat_id"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="SessionNew">
+   <arg type="s" name="session_id"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="SessionRemoved">
+   <arg type="s" name="session_id"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="UserNew">
+   <arg type="u" name="uid"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="UserRemoved">
+   <arg type="u" name="uid"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="SeatNew">
+   <arg type="s" name="seat_id"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="SeatRemoved">
+   <arg type="s" name="seat_id"/>
+   <arg type="o" name="object_path"/>
+  </signal>
+  <signal name="PrepareForShutdown">
+   <arg type="b" name="start"/>
+  </signal>
+  <signal name="PrepareForShutdownWithMetadata">
+   <arg type="b" name="start"/>
+   <arg type="a{sv}" name="metadata"/>
+    <annotation name="org.qtproject.QtDBus.QtTypeName.Out1" value="QVariantMap"/>
+  </signal>
+  <signal name="PrepareForSleep">
+   <arg type="b" name="start"/>
+  </signal>
+ </interface>
+</node>

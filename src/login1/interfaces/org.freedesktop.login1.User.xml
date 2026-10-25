@@ -1,0 +1,9 @@
+<node>
+ <interface name="org.freedesktop.login1.User">
+  <method name="Terminate">
+  </method>
+  <method name="Kill">
+   <arg type="i" name="signal_number" direction="in"/>
+  </method>
+ </interface>
+</node>

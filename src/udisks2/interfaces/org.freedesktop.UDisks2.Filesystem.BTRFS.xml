@@ -1,0 +1,63 @@
+<node>
+  <interface name="org.freedesktop.UDisks2.Filesystem.BTRFS">
+    <method name="AddDevice">
+      <arg type="o" name="device" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="RemoveDevice">
+      <arg type="o" name="device" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="CreateSubvolume">
+      <arg type="s" name="name" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="RemoveSubvolume">
+      <arg type="s" name="name" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="GetSubvolumes">
+      <arg type="b" name="snapshots_only" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+      <arg type="a(tts)" name="subvolumes" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::BtrfsSubvolumes"/>
+      <arg type="i" name="subvolumes_cnt" direction="out"/>
+    </method>
+    <method name="CreateSnapshot">
+      <arg type="s" name="source" direction="in"/>
+      <arg type="s" name="dest" direction="in"/>
+      <arg type="b" name="ro" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In3" value="QVariantMap"/>
+    </method>
+    <method name="Repair">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="Resize">
+      <arg type="t" name="size" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="SetLabel">
+      <arg type="s" name="label" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="GetDefaultSubvolumeID">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+      <arg type="u" name="id" direction="out"/>
+    </method>
+    <method name="SetDefaultSubvolumeID">
+      <arg type="u" name="id" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+  </interface>
+</node>

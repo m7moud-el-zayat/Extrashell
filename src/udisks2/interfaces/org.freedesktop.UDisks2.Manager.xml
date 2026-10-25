@@ -1,0 +1,28 @@
+<node>
+  <interface name="org.freedesktop.UDisks2.Manager">
+    <method name="CanFormat">
+      <arg type="s" name="type" direction="in"/>
+      <arg type="(bs)" name="available" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::ActionAvailability"/>
+    </method>
+    <method name="CanResize">
+      <arg type="s" name="type" direction="in"/>
+      <arg type="(bts)" name="available" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::ResizeAvailability"/>
+    </method>
+    <method name="CanCheck">
+      <arg type="s" name="type" direction="in"/>
+      <arg type="(bs)" name="available" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::ActionAvailability"/>
+    </method>
+    <method name="CanRepair">
+      <arg type="s" name="type" direction="in"/>
+      <arg type="(bs)" name="available" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::ActionAvailability"/>
+    </method>
+    <method name="EnableModule">
+      <arg type="s" name="name" direction="in"/>
+      <arg type="b" name="enable" direction="in"/>
+    </method>
+  </interface>
+</node>

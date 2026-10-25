@@ -1,0 +1,44 @@
+<node>
+  <interface name="org.freedesktop.UDisks2.Block">
+    <method name="AddConfigurationItem">
+      <arg type="(sa{sv})" name="item" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="extrashell::udisks2::BlockConfigurationItem"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="RemoveConfigurationItem">
+      <arg type="(sa{sv})" name="item" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="extrashell::udisks2::BlockConfigurationItem"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="UpdateConfigurationItem">
+      <arg type="(sa{sv})" name="old_item" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="extrashell::udisks2::BlockConfigurationItem"/>
+      <arg type="(sa{sv})" name="new_item" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="extrashell::udisks2::BlockConfigurationItem"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="QVariantMap"/>
+    </method>
+    <method name="GetSecretConfiguration">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+      <arg type="a(sa{sv})" name="configuration" direction="out"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="extrashell::udisks2::BlockConfiguration"/>
+    </method>
+    <method name="Format">
+      <arg type="s" name="type" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="Rescan">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="RestoreEncryptedHeader">
+      <arg type="s" name="backup_file" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+  </interface>
+</node>

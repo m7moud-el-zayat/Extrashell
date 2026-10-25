@@ -1,0 +1,44 @@
+<node>
+ <interface name="org.freedesktop.login1.Session">
+  <method name="Terminate">
+  </method>
+  <method name="Activate">
+  </method>
+  <method name="Lock">
+  </method>
+  <method name="Unlock">
+  </method>
+  <method name="SetIdleHint">
+   <arg type="b" name="idle" direction="in"/>
+  </method>
+  <method name="SetLockedHint">
+   <arg type="b" name="locked" direction="in"/>
+  </method>
+  <method name="Kill">
+   <arg type="s" name="whom" direction="in"/>
+   <arg type="i" name="signal_number" direction="in"/>
+  </method>
+  <method name="TakeControl">
+   <arg type="b" name="force" direction="in"/>
+  </method>
+  <method name="ReleaseControl">
+  </method>
+  <method name="SetType">
+   <arg type="s" name="type" direction="in"/>
+  </method>
+  <method name="SetClass">
+   <arg type="s" name="session_class" direction="in"/>
+  </method>
+  <method name="SetDisplay">
+   <arg type="s" name="display" direction="in"/>
+  </method>
+  <method name="SetTTY">
+   <arg type="h" name="tty_fd" direction="in"/>
+  </method>
+  <method name="SetBrightness">
+   <arg type="s" name="subsystem" direction="in"/>
+   <arg type="s" name="name" direction="in"/>
+   <arg type="u" name="brightness" direction="in"/>
+  </method>
+ </interface>
+</node>

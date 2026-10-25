@@ -1,0 +1,43 @@
+<node>
+  <interface name="org.freedesktop.UDisks2.Filesystem">
+    <method name="SetLabel">
+      <arg type="s" name="label" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="SetUUID">
+      <arg type="s" name="uuid" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="Mount">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+      <arg type="s" name="mount_path" direction="out"/>
+    </method>
+    <method name="Unmount">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="Resize">
+      <arg type="t" name="size" direction="in"/>
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="Check">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+      <arg type="b" name="consistent" direction="out"/>
+    </method>
+    <method name="Repair">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+      <arg type="b" name="repaired" direction="out"/>
+    </method>
+    <method name="TakeOwnership">
+      <arg type="a{sv}" name="options" direction="in"/>
+        <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+  </interface>
+</node>
+
